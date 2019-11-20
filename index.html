@@ -1,79 +1,14 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 	<meta charset="UTF-8">
-	<title>switch casse</title>
-	<style>
-	#heading{
-		width: 100%;
-		text-align: center;
-		padding-top: 50px;
-		color:blue;
-		font-family: calibri;
-		animation-name:example;
-		animation-duration:10s;
-		animation-iteration-count: infinite;
-	}
-
-	body{
-		background-color: #f2ffcc
-	}
-
-	@keyframes example {
-		0%{color:orange; background-color: red;}
-		25%{color:red; background-color: blue;}
-		50%{color:yellow; background-color: orange;}
-		75%{color:blue; background-color: blue;}
-		100%{color:orange; background-color: red;}
-	}
-
-	#script1{
-		text-align: center;
-		padding-top: 25px;
-		font-size: 32px;
-		color:orange;
-		font-family: calibri;
-	}
-
-
-	</style>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Philip Kenny</title>
 </head>
-
 <body>
 
-	<h1 id="heading">welcome to sorting</h1>
-
-
-	<p id = "script1">
-	<script type="text/javascript">
-		
-		var array = [15,13,11,9,7,5,4,3,2,10];
-		var val,j;
-
-		for(var i = 1; i < array.length; i++){
-				val = array[i];
-				j = i;
-
-				while(j > 0 && array[j - 1] > val) {
-					array[j] = array[j-1];
-					j--;
-				}
-
-				array[j] = val;
-
-			}
-
-		document.writeln("your sorted array is: ");
-
-		for(var i = 0; i < array.length; i++)
-			document.writeln(array[i]);
-
-	</script>
-	</p>
-
+	
 	
 </body>
 </html>
