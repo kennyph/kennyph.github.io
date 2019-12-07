@@ -85,6 +85,53 @@
 
     </br></br></br>
 
+    <kbd>replace philipkenny.org with your domain, if you do not have one yet use the ec2 IP
+      ~~~Port Forwarding~~~
+      Sudo ufw enable
+      Sudo ufw allow 80
+      Sudo ufw allow 443
+      Sudo ufw allow ‘Apache Full’
+      Sudo ufw allow OpenSSH
+      Sudo apt-get install apache2
+      
+      
+      ~~~Make working directory and owning it~~~
+      Sudo mkdir /var/www/philipkenny.org
+      Sudo chown ubuntu /var/www/philipkenny.org
+      Sudo chmod -R 755 philipkenny.org
+      
+      ~~~Make configuration file for this working directory~~~
+      Cd /etc/apache2/sites-available
+      Sudo nano philipkenny.org.conf
+      [VirtualHost *:80&gt;
+          ServerAdmin webmaster@localhost
+          ServerName philipkenny.org
+          ServerAlias www.philipkenny.org
+          DocumentRoot /var/www/philipkenny.org
+          ErrorLog ${APACHE_LOG_DIR}/error.log
+          CustomLog ${APACHE_LOG_DIR}/access.log combined
+      [/VirtualHost&gt; #note, replace both [  with &lt;
+      
+      ~~~Add configuration to Apache~~~
+      Sudo a2ensite philipkenny.org.conf
+      Sudo a2dissite 000-default.conf
+      Sudo apache2ctl configtest
+      
+      
+      
+      ~~~Download certbot to make SSL certificate~~~
+      sudo add-apt-repository ppa:certbot/certbot
+      sudo apt install python-certbot-apache
+      
+      Sudo certbot --apache -d philipkenny.org
+      BOOM --apache will set up certificates in apache's folders
+      
+      Now do VS code set up SFTP in /var/www/philipkenny.org
+          </kbd>
+
+          <br/>
+          <br/>
+
     <h2>Customer Information</h2>
     <br/>
     <form class="needs-validation" novalidate>
